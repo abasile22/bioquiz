@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <p class="score-container hide" id="score-container">
+      Puntos: <span id="score">0</span>
+    </p>
+
+    <div class="container">
+      <div class="start-page" id="start-page">
+        <h1>BioQuiz</h1>
+        <p>
+          <strong> Welcome to the quiz!<br /> </strong>
+        </p>
+        <ul>
+          <strong> Instrucciones:</strong><br /> 
+          <li>Tendrás que responder 5 preguntas</li>
+          <li>Para responder, elige una opción</li>
+          <li>Para ganar, todas las respuestas deben ser correctas</li>
+          <li>Para comenzar completa tu email y presiona 'Comenzar'</li>
+        </ul>
+        Email<input type="email" name="email" id="">
+        <button id="start-btn" class="start-btn btn">Comenzar</button>
+      </div>
+
+      <div class="question-container hide" id="question-container"></div>
+      <div class="option-container hide" id="option-container"></div>
+
+      <button class="btn next-btn hide" id="next-btn">Next</button>
+
+      <div class="end-page hide" id="end-page"></div>
+    </div>
+  </body>
+</html>
