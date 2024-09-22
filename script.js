@@ -289,6 +289,7 @@ function endGame() {
     endPage.innerHTML = `
     <h1>Ganaste!</h1>
     <p>You scored ${currentScore}/5.</p>
+    Email<input type="email" name="email" id="">
     <div class='end-page-buttons'>
     <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>End Game</button>
     </div>
@@ -297,6 +298,8 @@ function endGame() {
     endPage.innerHTML = `
     <h1>Game Over!</h1>
     <p>You scored ${currentScore}/5.</p>
+    Email<input type="email" name="email" id="">
+    <button id="restart-btn" class="start-btn btn" onclick='saveEmail()'>Enviar</button>
     <div class='end-page-buttons'>
     <button id="restart-btn" class="start-btn btn" onclick='startGame()'>Restart Game</button>
     <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>End Game</button>
@@ -304,6 +307,18 @@ function endGame() {
     `;
   }
   
+}
+
+function saveEmail() {
+  fetch("https://script.google.com/macros/s/AKfycbztfVxNKMpWujhO1zqnEV21AnBuyMAAymi3j39cYPxhYZcHZ8rw6X2w0x5Js2NSp0TV/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      email: "agustinbasile@gmail.com"
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
 }
 
 // event listeners
