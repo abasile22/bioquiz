@@ -11,8 +11,9 @@ const startBtn = document.getElementById("start-btn"),
 
 let counter = 0;
 let currentScore = 0;
-let startButton = document.getElementById('start-btn'); // Assuming your button has this ID
+let startButton = document.getElementById('start-btn');
 let games = 0;
+
 
 var data = ""
 const url = "https://script.google.com/macros/s/AKfycbymkypYB1eyUsHQ1yJBEjkRDt3HHT7FHj4_8lOjq-JnmASR11uMLPzZlHydMMWeD7xudg/exec";
@@ -24,7 +25,6 @@ const url = "https://script.google.com/macros/s/AKfycbymkypYB1eyUsHQ1yJBEjkRDt3H
 
 // start game function
 function startGame() {
-  console.log(data['questions'])
   optionContainer.classList.remove("clicked");
   !endPage.classList.contains("hide") ? endPage.classList.add("hide") : false;
   startPage.classList.add("hide");
@@ -117,7 +117,7 @@ function endGame() {
     <h1>Ganaste!</h1>
     <p>Tu puntuación ${currentScore}/5.</p>
     <div class='end-page-buttons'>
-    <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>End Game</button>
+    <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>Finalizar</button>
     </div>
     `;
   } else if (games > 2) {
@@ -125,7 +125,7 @@ function endGame() {
     <h1>Game Over!</h1>
     <p>Tu puntuación ${currentScore}/5.</p>
     <div class='end-page-buttons'>
-    <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>End Game</button>
+    <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>Finalizar</button>
     </div>
     `;
   } else {
@@ -133,10 +133,16 @@ function endGame() {
     <h1>Game Over!</h1>
     <p>Tu puntuación ${currentScore}/5.</p>
     <div class='end-page-buttons'>
-    <button id="restart-btn" class="start-btn btn" onclick='startGame()'>Restart Game</button>
-    <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>End Game</button>
+    <button id="restart-btn" class="start-btn btn" onclick='startGame()'>Reintentar</button>
+    <button id="end-btn" class="restart-btn btn" onclick='location.reload()'>Finalizar</button>
     </div>
     `;
+    var resetButton = document.getElementById('restart-btn');
+    (async () => {
+      resetButton.disabled = true;
+      data = await (await fetch(url)).json();
+      resetButton.disabled = false;
+    })();
   }
   
 }
