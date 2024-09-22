@@ -14,20 +14,14 @@
 
     <div class="container">
       <div class="start-page" id="start-page">
-        <h1>BioQuiz</h1>
+        <h1>BioTrivia</h1>
         <p>
-          <strong> Welcome to the quiz!<br /> </strong>
+          <strong>Bienvenido a la trivia!<br /> </strong>
         </p>
-        <ul>
-          <strong> Instrucciones:</strong><br /> 
-          <li>Tendrás que responder 5 preguntas</li>
-          <li>Para responder, elige una opción</li>
-          <li>Para ganar, todas las respuestas deben ser correctas</li>
-          <li>Para comenzar completa tu email y presiona 'Comenzar'</li>
-        </ul>
-        Email<input type="email" name="email" id="">
-        <button id="restart-btn" class="start-btn btn" onclick='saveEmail()'>Enviar</button>
-        <button id="start-btn" class="start-btn btn">Comenzar</button>
+        Completa tus datos para comenzar
+        Nombre<input type="name" name="name" id="player-name">
+        Email<input type="email" name="email" id="player-email">
+        <button id="start-btn" class="start-btn btn" onclick='saveEmail()'>Comenzar</button>
       </div>
 
       <div class="question-container hide" id="question-container"></div>

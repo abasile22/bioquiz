@@ -310,13 +310,14 @@ function endGame() {
 }
 
 function saveEmail() {
-  fetch("https://script.google.com/macros/s/AKfycbztfVxNKMpWujhO1zqnEV21AnBuyMAAymi3j39cYPxhYZcHZ8rw6X2w0x5Js2NSp0TV/exec", {
+  var email = document.getElementById('player-email').value
+  fetch("https://script.google.com/macros/s/AKfycbwOgt2a1MScufNJhULHQSJRyXYQ-zClHGnfuZmxg-S54fSc4I7HQwMKlExepGfZlwnsRQ/exec", {
     method: "POST",
     body: JSON.stringify({
-      email: "agustinbasile@gmail.com"
+      email: email
     }),
     headers: {
-      "Content-type": "application/json; charset=UTF-8"
+      'Content-Type': "text/plain;charset=utf-8"
     }
   })
 }
