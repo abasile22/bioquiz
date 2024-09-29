@@ -19,7 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-image: url("background.jpg");
+  background-image: url("../images/background.jpg");
   background-size: cover;
 }
 
@@ -71,13 +71,16 @@ nav h4 {
   background-color: white;
 }
 
+.texto-inicio {
+  text-align: center;
+}
+
 p {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   width: inherit;
   max-width: 400px;
   font-size: 18px;
-  font-weight: bold;
 }
 
 .start-page,
@@ -123,6 +126,7 @@ p {
 
 .start-btn {
   margin: 1rem 0 0;
+  margin-bottom: 0.5rem;
 }
 
 .next-btn {
@@ -220,4 +224,12 @@ p {
   .container {
     margin: 0 0 16px;
   }
+}
+
+footer {
+  position:fixed;
+  bottom:0;
+  margin-bottom: 15px;
+  color: #A77C6B;
+  text-shadow: 2px 2px 2px #fff;
 }
